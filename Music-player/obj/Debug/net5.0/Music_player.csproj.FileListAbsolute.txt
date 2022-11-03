@@ -1,0 +1,121 @@
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\appsettings.Development.json
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\appsettings.json
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.exe
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.deps.json
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.runtimeconfig.json
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.runtimeconfig.dev.json
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.dll
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.pdb
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.Views.dll
+D:\New folder\Music-player\Music-player\bin\Debug\net5.0\Music_player.Views.pdb
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.csproj.AssemblyReference.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.AssemblyInfoInputs.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.AssemblyInfo.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.csproj.CoreCompileInputs.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.MvcApplicationPartsAssemblyInfo.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorAssemblyInfo.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorAssemblyInfo.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\scopedcss\bundle\Music_player.styles.css
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\staticwebassets\Music_player.StaticWebAssets.Manifest.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.TagHelpers.input.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.TagHelpers.output.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorCoreGenerate.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorTargetAssemblyInfo.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorTargetAssemblyInfo.cs
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.Views.pdb
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.dll
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\refint\Music_player.dll
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.pdb
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.genruntimeconfig.cache
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\ref\Music_player.dll
+D:\New folder\Music-player\Music-player\obj\Debug\net5.0\Music_player.csproj.CopyComplete
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\appsettings.json
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.exe
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.deps.json
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.runtimeconfig.json
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.runtimeconfig.dev.json
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.dll
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.pdb
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.Views.dll
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\bin\Debug\net5.0\Music_player.Views.pdb
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.csproj.AssemblyReference.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.AssemblyInfoInputs.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.AssemblyInfo.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.csproj.CoreCompileInputs.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.RazorAssemblyInfo.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.RazorAssemblyInfo.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\scopedcss\bundle\Music_player.styles.css
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\staticwebassets\Music_player.StaticWebAssets.Manifest.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.TagHelpers.input.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.TagHelpers.output.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.RazorCoreGenerate.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.RazorTargetAssemblyInfo.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.RazorTargetAssemblyInfo.cs
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.Views.pdb
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.dll
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\refint\Music_player.dll
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.pdb
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.genruntimeconfig.cache
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\ref\Music_player.dll
+C:\Users\mseln\Desktop\Music-player\Music-player\Music_player\obj\Debug\net5.0\Music_player.csproj.CopyComplete
+D:\Music-player\Music-player\bin\Debug\net5.0\appsettings.Development.json
+D:\Music-player\Music-player\bin\Debug\net5.0\appsettings.json
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.exe
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.deps.json
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.runtimeconfig.json
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.runtimeconfig.dev.json
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.dll
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.pdb
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.Views.dll
+D:\Music-player\Music-player\bin\Debug\net5.0\Music_player.Views.pdb
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.csproj.AssemblyReference.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.GeneratedMSBuildEditorConfig.editorconfig
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.AssemblyInfoInputs.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.AssemblyInfo.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.csproj.CoreCompileInputs.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.MvcApplicationPartsAssemblyInfo.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorAssemblyInfo.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorAssemblyInfo.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\scopedcss\bundle\Music_player.styles.css
+D:\Music-player\Music-player\obj\Debug\net5.0\staticwebassets\Music_player.StaticWebAssets.Manifest.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.TagHelpers.input.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.TagHelpers.output.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorCoreGenerate.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorTargetAssemblyInfo.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.RazorTargetAssemblyInfo.cs
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.Views.pdb
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.dll
+D:\Music-player\Music-player\obj\Debug\net5.0\refint\Music_player.dll
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.pdb
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.genruntimeconfig.cache
+D:\Music-player\Music-player\obj\Debug\net5.0\ref\Music_player.dll
+D:\Music-player\Music-player\obj\Debug\net5.0\Music_player.csproj.CopyComplete
+D:\Music-player\Music-player\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Music-player\Music-player\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Music-player\Music-player\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Music-player\Music-player\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

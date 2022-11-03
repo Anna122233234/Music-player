@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Music_player.Models.FileDetails> 
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <title>MP3 Player</title>
+</head>
+<body>
+
+
+    <audio id="myAudio" ontimeupdate="onTimeUpdate()">
+        <!-- <source src="audio.ogg" type="audio/ogg"> -->
+        <source id="source-audio" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <div class="player-ctn">
+        <div class="infos-ctn">
+            <div class="timer">00:00</div>
+            <div class="title"></div>
+            <div class="duration">00:00</div>
+        </div>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+        <div class="btn-ctn">
+            <div class="btn-action first-btn" onclick="previous()">
+                <div id="btn-faws-back">
+                    <i class='fas fa-step-backward'></i>
+                </div>
+            </div>
+            <div class="btn-action" onclick="rewind()">
+                <div id="btn-faws-rewind">
+                    <i class='fas fa-backward'></i>
+                </div>
+            </div>
+            <div class="btn-action" onclick="toggleAudio()">
+                <div id="btn-faws-play-pause">
+                    <i class='fas fa-play' id="icon-play"></i>
+                    <i class='fas fa-pause' id="icon-pause" style="display: none"></i>
+                </div>
+            </div>
+            <div class="btn-play" onclick="forward()">
+                <div id="btn-faws-forward">
+                    <i class='fas fa-forward'></i>
+                </div>
+            </div>
+            <div class="btn-action" onclick="next()">
+                <div id="btn-faws-next">
+                    <i class='fas fa-step-forward'></i>
+                </div>
+            </div>
+            <div class="btn-mute" id="toggleMute" onclick="toggleMute()">
+                <div id="btn-faws-volume">
+                    <i id="icon-vol-up" class='fas fa-volume-up'></i>
+                    <i id="icon-vol-mute" class='fas fa-volume-mute' style="display: none"></i>
+                </div>
+            </div>
+        </div>
+        <div class="playlist-ctn" data-index="data-index">
+            
+        </div>
+    </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        function getAudios() {
+            $.ajax({
+                type: "GET",
+                url: 'Home/GetMusicList',
+                data: {},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    // Looping over emloyee list and display it
+                    $.each(response, function (index, name, duration) {
+                        var trackItem = document.createElement('div');
+                        trackItem.setAttribute("class", "playlist-track-ctn");
+                        trackItem.setAttribute("id", "ptc-" + index);
+                        trackItem.setAttribute("data-index", index);
+                        document.querySelector(".playlist-ctn").appendChild(trackItem);
+
+                        var playBtnItem = document.createElement('div');
+                        playBtnItem.setAttribute("class", "playlist-btn-play");
+                        playBtnItem.setAttribute("id", "pbp-" + index);
+                        document.querySelector("#ptc-" + index).appendChild(playBtnItem);
+
+                        var btnImg = document.createElement('i');
+                        btnImg.setAttribute("class", "fas fa-play");
+                        btnImg.setAttribute("height", "40");
+                        btnImg.setAttribute("width", "40");
+                        btnImg.setAttribute("id", "p-img-" + index);
+                        document.querySelector("#pbp-" + index).appendChild(btnImg);
+
+                        var trackInfoItem = document.createElement('div');
+                        trackInfoItem.setAttribute("class", "playlist-info-track");
+                        trackInfoItem.innerHTML = name
+                        document.querySelector("#ptc-" + index).appendChild(trackInfoItem);
+
+                        var trackDurationItem = document.createElement('div');
+                        trackDurationItem.setAttribute("class", "playlist-duration");
+                        trackDurationItem.innerHTML = duration
+                        document.querySelector("#ptc-" + index).appendChild(trackDurationItem);
+                    });
+                },
+
+            });
+        }
+    </script>
+
+    <div class="text-left"  style="margin-top: 100px">
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="files" id="file" accept=".mp3" ;>
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- To show the success message to the user  -->
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success" style="margin-top:50px">
+                @ViewBag.Message
+            </div>
+        }
+
+        <p style="margin-top: 50px">List of Files</p>
+        <!-- Get all the files from the server -->
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a asp-action="Add"
+                   asp-route-filename="@item.Name">
+                        @item.Name
+                    </a>
+                </li>
+            }
+        </ul>
+
+    </div>
+    
+
+
+</body>
+</html>
