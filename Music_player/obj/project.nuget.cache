@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "18/Mqa8GKpV65W2iQ4Q/EbrnPX3WlyFrb+geyY/XLOAkga9Vsei4pixKoxvKn40pRTsu+3wuOVYy5V8AwGx1ow==",
+  "dgSpecHash": "OyzKW0h90GOYuPun4My9zal/UjVMFbnTdrU0X4wNldQycHPM4Y+z3AXaA/f9Zp+iUStRo34Uurhn21C0R2VS6Q==",
   "success": true,
-  "projectFilePath": "D:\\FileUploadDownload\\Music_player.csproj",
+  "projectFilePath": "D:\\Music-player\\Music_player\\Music_player.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

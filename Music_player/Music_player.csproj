@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Upload\" />
+    <Content Remove="wwwroot\Upload\ghost-mary-on-a-cross-mp3.mp3" />
+    <Content Remove="wwwroot\Upload\kalush-stefania-kalush-orchestra-mp3.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Upload\ghost-mary-on-a-cross-mp3.mp3" />
+    <None Include="wwwroot\Upload\kalush-stefania-kalush-orchestra-mp3.mp3" />
   </ItemGroup>
 
 </Project>

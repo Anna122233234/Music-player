@@ -1,4 +1,5 @@
-﻿@model Music_player.Models.FilesViewModel
+﻿@model IEnumerable<Music_player.Models.FileDetails>
+@*@model Music_player.Models.FilesViewModel*@
 @{
     ViewData["Title"] = "Home Page";
     Layout = null;
@@ -69,7 +70,20 @@
                 </div>
             </div>
         </div>
-        <div class="playlist-ctn"></div>
+        <div class="playlist-ctn">
+            @foreach (var music in Model)
+            {
+                <div class="playlist-track-ctn" id="ptc-@music.Id" data-index="@music.Id">
+                    <div class="playlist-btn-play" id="pbp-@music.Id" >
+                        <i class="fas fa-play" height="40" width="40" id="p-img-@music.Id"></i>
+                    </div>
+                    <div classclass="playlist-info-track"> 
+                        @music.Name
+                    </div>
+                </div>
+                
+            }
+        </div>
     </div>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
@@ -94,7 +108,7 @@
         <p style="margin-top: 50px">List of Files</p>
         <!-- Get all the files from the server -->
         <ul>
-            @foreach (var item in Model.Files)
+            @foreach (var item in Model)
             {
                 <li>
                     <a asp-action="Download"
