@@ -1,54 +1,12 @@
-﻿
-function createTrackItem(index, name, duration) {
-    var trackItem = document.createElement('div');
-    trackItem.setAttribute("class", "playlist-track-ctn");
-    trackItem.setAttribute("id", "ptc-" + index);
-    trackItem.setAttribute("data-index", index);
-    document.querySelector(".playlist-ctn").appendChild(trackItem);
-
-    var playBtnItem = document.createElement('div');
-    playBtnItem.setAttribute("class", "playlist-btn-play");
-    playBtnItem.setAttribute("id", "pbp-" + index);
-    document.querySelector("#ptc-" + index).appendChild(playBtnItem);
-
-    var btnImg = document.createElement('i');
-    btnImg.setAttribute("class", "fas fa-play");
-    btnImg.setAttribute("height", "40");
-    btnImg.setAttribute("width", "40");
-    btnImg.setAttribute("id", "p-img-" + index);
-    document.querySelector("#pbp-" + index).appendChild(btnImg);
-
-    var trackInfoItem = document.createElement('div');
-    trackInfoItem.setAttribute("class", "playlist-info-track");
-    trackInfoItem.innerHTML = name
-    document.querySelector("#ptc-" + index).appendChild(trackInfoItem);
-
-    var trackDurationItem = document.createElement('div');
-    trackDurationItem.setAttribute("class", "playlist-duration");
-    trackDurationItem.innerHTML = duration
-    document.querySelector("#ptc-" + index).appendChild(trackDurationItem);
-}
-
-var listAudio = [
-    {
-        name: "Artist 1 - audio 1",
-        file: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-        duration: ""
-    },
-    {
-        name: "Artist 2 - audio 2",
-        file: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-        duration: ""
-    },
-    {
-        name: "Artist 3 - audio 3",
-        file: "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_1MG.mp3",
-        duration: ""
-    }
+﻿var listAudio = [
+    name = " ";
+    file = " ";
+    duration = " "
 ]
 
 for (var i = 0; i < listAudio.length; i++) {
-    createTrackItem(i, listAudio[i].name, listAudio[i].duration);
+    listAudio.name = getElementsByClassName('playlist-info-track');
+    listAudio.file = getElementByClassName('playlist-btn-play');
 }
 var indexAudio = 0;
 
@@ -230,4 +188,5 @@ function toggleMute() {
         volMute.style.display = "none"
         volUp.style.display = "block"
     }
+}
 }
