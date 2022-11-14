@@ -5,81 +5,83 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Web;
 using System.Threading.Tasks;
 using FileUploadDownload.Models;
 using Music_player.Service;
+using Microsoft.AspNetCore.Http.Features;
+using System.Net.Http;
+using System;
+using System.Linq;
+using Microsoft.AspNetCore.Hosting;
+using static System.Net.WebRequestMethods;
 
 namespace Music_player.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
         private readonly ILogger<HomeController> _logger;
 
         private readonly IMusicService _musicService;
 
-        public HomeController(ILogger<HomeController> logger, IMusicService musicService)
+        private IHttpContextAccessor _accessor;
+
+        public HomeController(ILogger<HomeController> logger, IMusicService musicService, IHttpContextAccessor accessor, IWebHostEnvironment webHost)
         {
+            _webHostEnvironment = webHost;
             _logger = logger;
             _musicService = musicService;
-        }
-
-        public IActionResult Index()
-        {
-            return View(_musicService.GetListMusic());
+            _accessor = accessor;
         }
         public JsonResult MusicList()
         {
             return Json(_musicService.GetListMusic());
         }
 
-        public IActionResult Index1()
+        public IActionResult Index()
         {
-            // Get files from the server
-            var model = new FilesViewModel();
-            foreach (var item in Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Upload")))
+            List<string> Files = Directory.GetFiles(System.IO.Path.Combine(_webHostEnvironment.WebRootPath, "Upload")).ToList();
+            FilesViewModel Model = new FilesViewModel();
+            Model.Files = new List<FileDetails>();
+
+            foreach (var file in Files) 
             {
-                model.Files.Add(
-                    new FileDetails { Name = System.IO.Path.GetFileName(item), Path = item });
+                Model.Files.Add(new FileDetails {Path="data:audio/wav;base64," + Convert.ToBase64String(System.IO.File.ReadAllBytes(file)), Name=Path.GetFileNameWithoutExtension(file)
+            });
             }
-            return View(model);
+            return View(Model);
+        }
+
+        [HttpGet]
+        public IActionResult Player() 
+        {
+            return View("Player");
         }
 
         [HttpPost]
-        public IActionResult Index(IFormFile[] files)
+        public IActionResult Upload(IFormFile file)
         {
-            // Iterate each files
-            foreach (var file in files)
+            string path = Path.Combine(_webHostEnvironment.WebRootPath, "Upload");
+            if (!Directory.Exists(path))
             {
-                // Get the file name from the browser
-                var fileName = System.IO.Path.GetFileName(file.FileName);
-
-                // Get file path to be uploaded
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Upload", fileName);
-
-                // Check If file with same name exists and delete it
-                if (System.IO.File.Exists(filePath))
-                {
-                    System.IO.File.Delete(filePath);
-                }
-
-
-                // Create a new local file and copy contents of uploaded file
-                using (var localFile = System.IO.File.OpenWrite(filePath))
-                using (var uploadedFile = file.OpenReadStream())
-                {
-                    uploadedFile.CopyTo(localFile);
-                }
+                Directory.CreateDirectory(path);
             }
-            ViewBag.Message = "Files are successfully uploaded";
-
-            // Get files from the server
-            var model = new FilesViewModel();
-            foreach (var item in Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Upload")))
+            using (FileStream stream = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
             {
-                model.Files.Add(
-                    new FileDetails { Name = System.IO.Path.GetFileName(item), Path = item });
+                file.CopyTo(stream);
             }
-            return View(model);
+            FileDetails myModel = new FileDetails();
+            myModel.Path = "data:audio/wav;base64," + Convert.ToBase64String(System.IO.File.ReadAllBytes(Path.Combine(path, file.FileName)));
+            return RedirectToAction("Index");
+        }
+
+        public List<string> GetSongs() 
+        {
+            List<string> names = _musicService.GetListMusic().Select(x => x.Name).ToList();
+
+            return names;
         }
 
         public async Task<IActionResult> Download(string filename)
@@ -87,7 +89,7 @@ namespace Music_player.Controllers
             if (filename == null)
                 return Content("filename is not availble");
 
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Upload", filename);
+            var path = Path.Combine(_webHostEnvironment.WebRootPath, "/Upload", filename);
 
             var memory = new MemoryStream();
             using (var stream = new FileStream(@path, FileMode.Open))
@@ -113,6 +115,18 @@ namespace Music_player.Controllers
             };
         }
 
+        [HttpGet]
+        public string GetIpAddress() 
+        {
+            string ip = _accessor.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+            Console.WriteLine(ip);
+            return ip;
+        }
+        [HttpGet]
+        public IActionResult GetMusics()
+        {
+            return Json(_musicService.GetListMusic());
+        }
         public IActionResult Privacy()
         {
             return View();
