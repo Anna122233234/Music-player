@@ -5,13 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Upload\ghost-mary-on-a-cross-mp3.mp3" />
-    <Content Remove="wwwroot\Upload\kalush-stefania-kalush-orchestra-mp3.mp3" />
+    <Folder Include="Data\Configurations\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Upload\ghost-mary-on-a-cross-mp3.mp3" />
-    <None Include="wwwroot\Upload\kalush-stefania-kalush-orchestra-mp3.mp3" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.4" />
   </ItemGroup>
 
 </Project>

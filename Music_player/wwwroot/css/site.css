@@ -18,10 +18,6 @@
     border-radius: 10px;
 }
 
-.logo {
-    fill: red;
-}
-
 .btn-action {
     cursor: pointer;
     padding-top: 10px;
@@ -76,15 +72,14 @@
     display: flex;
     background-color: #759cd8;
     margin-top: 3px;
-    border-radius: 5px;
+    border-radius: 23px;
     cursor: pointer;
 }
+.p1 {
+    color: #759cd8;
+}
 
-    .playlist-track-ctn:last-child {
-        /*border: 1px solid #ffc266; */
-    }
-
-    .playlist-track-ctn > div {
+.playlist-track-ctn > div {
         margin: 10px;
     }
 
