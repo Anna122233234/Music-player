@@ -9,12 +9,9 @@ using System.Web;
 using System.Threading.Tasks;
 using FileUploadDownload.Models;
 using Music_player.Service;
-using Microsoft.AspNetCore.Http.Features;
-using System.Net.Http;
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
-using static System.Net.WebRequestMethods;
 
 namespace Music_player.Controllers
 {
@@ -27,7 +24,6 @@ namespace Music_player.Controllers
         private readonly IMusicService _musicService;
 
         private IHttpContextAccessor _accessor;
-
         public HomeController(ILogger<HomeController> logger, IMusicService musicService, IHttpContextAccessor accessor, IWebHostEnvironment webHost)
         {
             _webHostEnvironment = webHost;
@@ -35,9 +31,18 @@ namespace Music_player.Controllers
             _musicService = musicService;
             _accessor = accessor;
         }
-        public JsonResult MusicList()
+        private string GetContentType(string path)
         {
-            return Json(_musicService.GetListMusic());
+            var types = GetMimeTypes();
+            var ext = Path.GetExtension(path).ToLowerInvariant();
+            return types[ext];
+        }
+        private Dictionary<string, string> GetMimeTypes()
+        {
+            return new Dictionary<string, string>
+            {
+                {".mp3", "music/mp3"}
+            };
         }
 
         public IActionResult Index()
@@ -52,12 +57,6 @@ namespace Music_player.Controllers
             });
             }
             return View(Model);
-        }
-
-        [HttpGet]
-        public IActionResult Player() 
-        {
-            return View("Player");
         }
 
         [HttpPost]
@@ -77,13 +76,6 @@ namespace Music_player.Controllers
             return RedirectToAction("Index");
         }
 
-        public List<string> GetSongs() 
-        {
-            List<string> names = _musicService.GetListMusic().Select(x => x.Name).ToList();
-
-            return names;
-        }
-
         public async Task<IActionResult> Download(string filename)
         {
             if (filename == null)
@@ -100,33 +92,6 @@ namespace Music_player.Controllers
             return File(memory, GetContentType(path), Path.GetFileName(path));
         }
 
-        private string GetContentType(string path)
-        {
-            var types = GetMimeTypes();
-            var ext = Path.GetExtension(path).ToLowerInvariant();
-            return types[ext];
-        }
-
-        private Dictionary<string, string> GetMimeTypes()
-        {
-            return new Dictionary<string, string>
-            {
-                {".mp3", "music/mp3"}
-            };
-        }
-
-        [HttpGet]
-        public string GetIpAddress() 
-        {
-            string ip = _accessor.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
-            Console.WriteLine(ip);
-            return ip;
-        }
-        [HttpGet]
-        public IActionResult GetMusics()
-        {
-            return Json(_musicService.GetListMusic());
-        }
         public IActionResult Privacy()
         {
             return View();

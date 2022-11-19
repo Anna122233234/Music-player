@@ -11,7 +11,7 @@ namespace Music_player.Service
         public List<FileDetails> GetListMusic()
         {
             List<FileDetails> Audio = new List<FileDetails>();
-            DirectoryInfo d = new DirectoryInfo(@"wwwroot/Upload/"); //Assuming Test is your Folder
+            DirectoryInfo d = new DirectoryInfo(@"wwwroot/Upload/"); //Assuming Test in Folder
             FileInfo[] Files = d.GetFiles("*.mp3");//Getting Text files
             int id = 1;
             foreach (var item in Files)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n8PkVb0sgmHLce5rDz7r5mJaIS/MRiDNj9rggPt0nl4R94Xm2q4EbZLRuzWFSor1nw4nb/vKoeET8L+4vJzi6w==",
+  "dgSpecHash": "xEAVlj+TosAWy774SXOkKx7reytMYnUA2/06SNgSO+4qV2bNtmugxSZvA5EV1KZGInBmZZ/9xPIxSy0aeM/RqA==",
   "success": true,
-  "projectFilePath": "D:\\Music_player\\Music_player.csproj",
+  "projectFilePath": "D:\\Music-player\\Music_player\\Music_player.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mseln\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mseln\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

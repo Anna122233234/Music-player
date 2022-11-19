@@ -61,7 +61,7 @@
 
 .player-ctn {
     border-radius: 15px;
-    width: 420px;
+    width:500px;
     padding: 10px;
     background-color: #373737;
     margin: auto;
@@ -72,6 +72,7 @@
     display: flex;
     background-color: #759cd8;
     margin-top: 3px;
+    width: 500px;
     border-radius: 23px;
     cursor: pointer;
 }
@@ -99,6 +100,9 @@
     padding-bottom: 20px;
 }
 
+audio {
+    width:500px;
+}
 .active-track {
     background: #759cd8;
     color: #9cb9d1 !important;
