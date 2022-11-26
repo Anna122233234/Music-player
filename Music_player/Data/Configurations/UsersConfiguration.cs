@@ -1,11 +1,5 @@
-﻿using Music_player.Data;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Music_player.Data.Models;
 
 namespace Music_player.Data.Configurations
 {
@@ -22,4 +16,5 @@ namespace Music_player.Data.Configurations
             builder.Property(u => u.Name).IsRequired();
             builder.Property(u => u.Password).IsRequired();
         }
+    }
 }

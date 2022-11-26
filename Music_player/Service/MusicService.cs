@@ -26,7 +26,8 @@ namespace Music_player.Service
                     );
                 id++;
             }
-            foreach (var item in Audio) {
+            foreach (var item in Audio)
+            {
                 Console.WriteLine(item.Id);
                 Console.WriteLine(item.Path);
             }

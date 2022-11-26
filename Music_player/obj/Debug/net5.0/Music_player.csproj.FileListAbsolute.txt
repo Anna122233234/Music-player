@@ -184,3 +184,6 @@ D:\Music_player\obj\Debug\net5.0\Music_player.pdb
 D:\Music_player\obj\Debug\net5.0\Music_player.genruntimeconfig.cache
 D:\Music_player\obj\Debug\net5.0\ref\Music_player.dll
 D:\Music-player\Music_player\obj\Debug\net5.0\Razor\Views\Home\Player.cshtml.g.cs
+D:\Music-player\Music_player\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Music-player\Music_player\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Music-player\Music_player\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll

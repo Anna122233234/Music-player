@@ -51,10 +51,13 @@ namespace Music_player.Controllers
             FilesViewModel Model = new FilesViewModel();
             Model.Files = new List<FileDetails>();
 
-            foreach (var file in Files) 
+            foreach (var file in Files)
             {
-                Model.Files.Add(new FileDetails {Path="data:audio/wav;base64," + Convert.ToBase64String(System.IO.File.ReadAllBytes(file)), Name=Path.GetFileNameWithoutExtension(file)
-            });
+                Model.Files.Add(new FileDetails
+                {
+                    Path = "data:audio/wav;base64," + Convert.ToBase64String(System.IO.File.ReadAllBytes(file)),
+                    Name = Path.GetFileNameWithoutExtension(file)
+                });
             }
             return View(Model);
         }

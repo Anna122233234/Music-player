@@ -1,91 +1,40 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Music_player.Data.Models;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.IdentityModel.Tokens;
-using Music_player.Data.Models;
-using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Music_player.Data.Repository;
 
-namespace Music_player.Data.Repository
+namespace GenRepApp
 {
-    public class GenericRepository : IGenericRepository
+    public class EFGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private readonly MusicDbContext _musicdbcontext;
-        public GenericRepository(MusicDbContext context)
+        DbContext _context;
+        DbSet<TEntity> _dbSet;
+
+        public EFGenericRepository(DbContext context)
         {
-            _musicdbcontext = context;
+            _context = context;
+            _dbSet = context.Set<TEntity>();
+        }
+        public TEntity FindById(int id)
+        {
+            return _dbSet.Find(id);
         }
 
-        public async Task AddUserAsync(User user)
+        public void Create(TEntity item)
         {
-            if (user.Name.IsNullOrEmpty())
-            {
-                throw new ArgumentException("No correctly Data");
-            }
-
-            await _musicdbcontext.Users.AddAsync(user);
-            await _musicdbcontext.SaveChangesAsync();
+            _dbSet.Add(item);
+            _context.SaveChanges();
         }
-
-        public async Task DeleteUserAsync(int userId)
+        public void Update(TEntity item)
         {
-
-            var user = await _musicdbcontext.Users.SingleOrDefaultAsync(u => u.Id == userId);
-            if (user == null)
-            {
-                throw new ArgumentNullException("This user is not exist");
-            }
-            _musicdbcontext.Users.Remove(user);
-            await _musicdbcontext.SaveChangesAsync();
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
         }
-
-        public async Task<List<User>> GetAllUserAsync()
+        public void Remove(TEntity item)
         {
-            var users = await _musicdbcontext.Users.ToListAsync();
-            return users;
-        }
-
-        public async Task<User?> GetUserByIdAsync(int userId)
-        {
-            return await _musicdbcontext.Users.SingleOrDefaultAsync(u => u.Id == userId);
-        }
-
-        public async Task<User> GetUserByUsernameAsync(string username)
-        {
-            if (username is null)
-            {
-                throw new ArgumentNullException("This user is not exist");
-            }
-
-            return await _musicdbcontext.Users.SingleOrDefaultAsync(u => u.Name == username);
-        }
-
-        public async Task UpdateUserAsync(User newData)
-        {
-            if (newData == null)
-            {
-                throw new ArgumentNullException("New data is null");
-            }
-
-            var user = await _musicdbcontext.Users.SingleOrDefaultAsync(u => u.Id == newData.Id);
-
-            if (user == null)
-            {
-                throw new ArgumentNullException("This user is not exist");
-            }
-
-            if (user.Name != newData.Name)
-            {
-                user.Name = newData.Name;
-            }
-
-            if (user.Id != newData.Id)
-            {
-                user.Id = newData.Id;
-            }
-
-            await _musicdbcontext.SaveChangesAsync();
+            _dbSet.Remove(item);
+            _context.SaveChanges();
         }
     }
 }
-
