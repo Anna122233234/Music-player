@@ -1,40 +1,45 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Music_player.Data;
+using Music_player.Data.Entity;
+using Music_player.Data.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using Music_player.Data.Repository;
+using System.Threading.Tasks;
 
-namespace GenRepApp
+namespace Music_player.Data.Repository
 {
-    public class EFGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository : IGenericRepository
     {
-        DbContext _context;
-        DbSet<TEntity> _dbSet;
+        private readonly MusicDbContext _dbContext;
 
-        public EFGenericRepository(DbContext context)
+        public GenericRepository(MusicDbContext dbContext)
         {
-            _context = context;
-            _dbSet = context.Set<TEntity>();
-        }
-        public TEntity FindById(int id)
-        {
-            return _dbSet.Find(id);
+            _dbContext = dbContext;
         }
 
-        public void Create(TEntity item)
+        public async Task<TEntity> AddAsync<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
-            _dbSet.Add(item);
-            _context.SaveChanges();
+            var result = await _dbContext.Set<TEntity>()
+                .AddAsync(entity);
+
+            await _dbContext.SaveChangesAsync();
+
+            return result.Entity;
         }
-        public void Update(TEntity item)
+
+        public async Task<TEntity> UpdateAsync<TEntity>(TEntity entity) where TEntity : class, IEntity
         {
-            _context.Entry(item).State = EntityState.Modified;
-            _context.SaveChanges();
+            var result = _dbContext.Set<TEntity>()
+                .Update(entity);
+
+            await _dbContext.SaveChangesAsync();
+            return result.Entity;
         }
-        public void Remove(TEntity item)
+        public IQueryable<TEntity> GetAll<TEntity>() where TEntity : class, IEntity 
         {
-            _dbSet.Remove(item);
-            _context.SaveChanges();
+            return _dbContext.Set<TEntity>()
+                .Select(i => i);
         }
     }
 }
