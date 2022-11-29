@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Music_player.Data.Configurations;
+using Music_player.Data.Entity;
 
 namespace Music_player.Data
 {
